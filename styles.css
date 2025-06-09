@@ -442,19 +442,23 @@ footer a:focus {
 
 /* Back to Top Button */
 #backToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #0077cc;
-  border: none;
-  color: white;
-  padding: 12px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  display: none;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #0077cc;
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+#backToTopBtn.show {
+    display: block;
 }
 
 #backToTopBtn.show {
@@ -581,20 +585,6 @@ footer a:focus {
 
   .nav-links li a {
     color: #333; /* Dark text for contrast on white background */
-    padding: 12px 20px;
-    font-weight: 600;
-    border-radius: 0; /* Remove border-radius on links */
-    transition: background-color 0.3s ease;
-  }
-
-  .nav-links li a:hover,
-  .nav-links li a:focus {
-    background-color: #f0f0f0; /* Light gray hover */
-    outline: none;
-  }
-
-  .nav-links li a {
-    color: #f0f0f0; /* Light text for contrast */
     padding: 12px 20px;
     font-weight: 600;
     border-radius: 8px;

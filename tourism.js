@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const backToTopBtn = document.getElementById('backToTopBtn');
 
   window.addEventListener('scroll', () => {
-    console.log('ScrollY:', window.scrollY, 'BackToTopBtn classes:', backToTopBtn.className);
     if (window.scrollY > 300) {
       backToTopBtn.classList.add('show');
     } else {
