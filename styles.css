@@ -1,0 +1,747 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+/* Top Bar Styling */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00587a; /* A deep blue tone */
+  color: #ffffff;
+  padding: 10px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-right span {
+  margin-left: 20px;
+}
+
+.top-bar a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+/* Marquee Text Animation */
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 40px;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  flex-wrap: nowrap;
+  height: 100px;
+  gap: 25px;
+  position: relative;
+  z-index: 10;
+}
+
+
+.logo-group .header-logo {
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+}
+
+.main-nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #008000;
+  border: none;
+  /* cursor: pointer;
+  display: inline-block; */
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background-color: #006400;
+  outline: none;
+}
+
+/* Menu toggle button for mobile */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/Bali_photo7.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 0 20px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  /* top: 0; left: 0; right: 0; bottom: 0; */
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+#exploreBtn {
+  background-color: #0071c2;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#exploreBtn:hover,
+#exploreBtn:focus {
+  background-color: #005ea1;
+  outline: none;
+}
+
+/* Destinations Section */
+.destinations {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destinations > h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.destinations h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #004080;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.card {
+  background: linear-gradient(45deg, green, red);
+  border-radius: 10px;
+  padding: 4px; /* space for border */
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  min-height: 350px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card > * {
+  background-color: white;
+  border-radius: 6px; /* slightly smaller than card border-radius */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  background-color: white;
+  border-radius: 6px;
+  padding: 15px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.card-content p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.package-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-outline {
+  border: 2px solid #2e7d32;
+  background: transparent;
+  color: #2e7d32;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: #2e7d32;
+  color: white;
+  outline: none;
+}
+
+.btn-filled {
+  background-color: #2e7d32;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-filled:hover,
+.btn-filled:focus {
+  background-color: #1b4d23;
+  outline: none;
+}
+
+/* About Section */
+#about {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+#about p.about {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+/* Offers Section Styling */
+.offers {
+  padding: 60px 20px;
+  background-color: #f5faff; /* Light background for contrast */
+  text-align: center;
+}
+
+.offers h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #003b5b; /* Deep blue title */
+}
+
+.offers-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Offers Cards Layout */
+.offers-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Offer Card Styling */
+.offer-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card h3 {
+  color: #0077b6;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn-filled {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-filled:hover {
+  background-color: #005f90;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .offers-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer-card {
+    width: 90%;
+  }
+}
+
+ 
+/* Footer */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #66b3ff;
+  font-weight: 600;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #99ccff;
+  outline: none;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #0077cc;
+  border: none;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#backToTopBtn.show {
+  display: block;
+}
+
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+  background-color: #005fa3;
+  outline: none;
+}
+
+/* Animations */
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Animate */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .top-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .top-bar-left {
+    display: none;
+  }
+
+  .top-bar-left {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+  }
+
+  .marquee {
+    position: absolute;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 12s linear infinite;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    will-change: transform;
+  }
+
+
+.top-bar-right span,
+.top-bar-right a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.top-bar-right a:hover,
+.top-bar-right a:focus {
+  color: #cce6ff !important;
+  text-decoration: underline;
+}
+
+.top-bar-right a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.top-bar-right a:hover,
+.top-bar-right a:focus {
+  color: #cce6ff !important;
+  text-decoration: underline;
+}
+
+  .main-header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    height: auto;
+    gap: 15px;
+  }
+
+  .logo-group .header-logo {
+    height: 120px;
+  }
+
+  /* Navigation adjustments */
+  .nav-links {
+    flex-direction: column;
+    background-color: white; /* Changed to white for simple clean menu */
+    position: absolute;
+    top: 100px;
+    right: 15px;
+    width: 200px;
+    border-radius: 0; /* Removed border-radius */
+    display: none;
+    box-shadow: none; /* Removed box-shadow */
+    padding: 15px 10px;
+    z-index: 20;
+  }
+
+  .nav-links li a {
+    color: #333; /* Dark text for contrast on white background */
+    padding: 12px 20px;
+    font-weight: 600;
+    border-radius: 0; /* Remove border-radius on links */
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    background-color: #f0f0f0; /* Light gray hover */
+    outline: none;
+  }
+
+  .nav-links li a {
+    color: #f0f0f0; /* Light text for contrast */
+    padding: 12px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    background-color: #00509e; /* Slightly lighter blue on hover */
+    outline: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  #menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #004080;
+    cursor: pointer;
+    width: 48px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-links li a {
+    color: white; /* Dark text for contrast on white background */
+    padding: 12px 20px;
+    font-weight: 600;
+    border-radius: 0; /* Remove border-radius on links */
+    transition: background-color 0.3s ease;
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  /* Hero section adjustments */
+  .hero {
+    height: auto;
+    padding: 60px 20px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  #exploreBtn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  /* Destinations section adjustments */
+  .destinations {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 20px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+.popular-destinations-heading {
+  position: relative;
+  top: -50px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004080;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  z-index: 10;
+  background: white;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+  border-radius: 8px;
+ 
+}
+.highlight-section {
+  background-color: #fef6e4;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid #ffa500;
+  border-bottom: 2px solid #ffa500;
+  margin-top: 40px;
+}
+
+.highlight-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.highlight-section p {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.highlight-section .btn-filled {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #ffa500;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
